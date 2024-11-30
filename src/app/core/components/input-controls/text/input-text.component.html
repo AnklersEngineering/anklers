@@ -1,0 +1,70 @@
+<div class="relative z-0 w-full">
+  <input
+    class="pt-4 rounded-20 block h-16 px-5 w-full text-white border border-white/20 appearance-none bg-white/10 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+    [type]="type"
+    [id]="id"
+    [attr.name]="name"
+    [attr.autocomplete]="autocomplete"
+    [(ngModel)]="value"
+    [placeholder]="placeholder"
+    [disabled]="disabled"
+    (blur)="blur()"
+    (focus)="focus()"
+    (keydown)="onKeyDown($event)"
+    #currentInput
+    tabindex="0"
+    container="body"
+    [readonly]="readOnly"
+  />
+  <label
+    [for]="id"
+    class="px-5 peer-focus:font-sm absolute text-white duration-300 transform -translate-y-5 scale-75 top-5 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-5 peer-focus:left-1 focus:left-1 left-1"
+    [class.label--req]="hasRequiredField.value"
+    [class.form-control_label--prefix]="isHasPrefix"
+  >
+    <span #titleRef><ng-content select="[title]"></ng-content></span>
+    <span *ngIf="hasRequiredField.value && isRequiredErrorAvailable">*</span>
+  </label>
+</div>
+
+<!-- <div
+  class="form-control_wrapper"
+  [class.has-value]="value && !disabled && allowClear"
+>
+  <span #prefixRef>
+    <ng-content select="[inputPrefix]"></ng-content>
+  </span>
+  <div class="form-control_actions">
+    <div class="form-control_loader_wrapper" *ngIf="isLoading">
+      <div class="form-control_loader"></div>
+    </div>
+    <div
+      class="form-control_action form-group_control_suffix"
+      #suffixRef
+      [class.d-none]="!isHasSuffix"
+    >
+      <ng-content select="[inputSuffix]"></ng-content>
+    </div>
+
+    <button
+      tabindex="-1"
+      class="form-control_action form-control_action_clear"
+      *ngIf="!isLoading && value && !disabled && allowClear"
+      (click)="clearValue()"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+        <path d="M0 0h24v24H0V0z" fill="none" />
+        <path
+          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"
+        />
+      </svg>
+    </button>
+  </div>
+</div> -->
+
+<ng-content></ng-content>
+
+<div class="form-control_error" *ngIf="isInvalid && !errorOnHover">
+  <form-control-error [control]="formControl"></form-control-error>
+  <ng-content select="[input-custom-error]"></ng-content>
+</div>
