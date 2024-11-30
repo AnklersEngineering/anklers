@@ -1,16 +1,16 @@
-<header class="fixed top-5 left-0 right-0">
-  <nav class="px-4 lg:px-6 py-2.5">
-    <div class="flex flex-wrap items-center mx-auto max-w-screen-xl">
+<header class="fixed top-5 left-0 right-0 z-10 max-w-screen-3xl mx-auto">
+  <nav class="px-12  py-2.5">
+    <div class="flex flex-wrap items-center mx-auto ">
       <a
-        href="https://flowbite.com"
-        class="flex items-center text-white uppercase me-16"
+        routerLink="/"  
+        class="flex items-center me-16 cursor-pointer"
       >
-        Anklers
+        <img src="/assets/img/logo.svg" alt="">
       </a>
       <div class="flex items-center ms-auto lg:order-2">
         <a
           href="#"
-          class="px-6 py-3 rounded-full bg-white hover:bg-default hover:text-white transition-all duration-300"
+          class="btn-white text-dark"
           >Let's talk</a
         >
         <button
@@ -56,9 +56,10 @@
         >
           <li>
             <a
-              href="#"
+              routerLink="/projects" 
+              routerLinkActive="active" 
               class="block py-2 pr-4 pl-3 text-secondary rounded bg-primary-700 lg:text-primary-700 lg:p-0"
-              aria-current="page"
+
               >Cases (6)</a
             >
           </li>
@@ -71,7 +72,8 @@
           </li>
           <li>
             <a
-              href="#"
+              routerLink="/contacts" 
+              routerLinkActive="active" 
               class="block py-2 pr-4 pl-3 text-secondary hover:text-blue-500 lg:hover:text-primary-700 lg:p-0"
               >Contact us</a
             >

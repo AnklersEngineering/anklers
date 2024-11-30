@@ -11,10 +11,11 @@ import { CoreModule } from '@web/core';
 import { PlatformService } from '@web/core/services';
 import { AppFooterComponent } from '@web/shared/footer/footer.component';
 import { AppHeaderComponent } from '@web/shared/header/header.component';
+import { SectionContactsComponent } from '@web/shared/sections/section-contacts/section-contacts.component';
 
 @Component({
   standalone: true,
-  imports: [AppHeaderComponent, AppFooterComponent, CoreModule],
+  imports: [AppHeaderComponent, AppFooterComponent, CoreModule, SectionContactsComponent],
   selector: 'home-page',
   templateUrl: './home-page.component.html',
 })
@@ -26,7 +27,6 @@ export class HomePageComponent implements OnInit, AfterViewInit {
 
   constructor() {}
 
-  test1: number = 0;
   ngOnInit() {}
   ngAfterViewInit(): void {
     if (this.platformService.isBrowser) {
