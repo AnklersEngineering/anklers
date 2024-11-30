@@ -9,6 +9,10 @@ module.exports = {
       fontFamily: {
         sans: ['Inter Tight', 'ui-sans-serif', 'system-ui'],
       },
+      backgroundImage: {
+        'gradient-main': 'linear-gradient(129.25deg, #1F1F1F 27.52%, #9D4B0B 177.57%)',
+        'gradient-card': 'linear-gradient(101.24deg, rgba(255, 255, 255, 0.1) -4.32%, rgba(255, 255, 255, 0.05) 93.72%)'
+      },
       fontSize: {
         h1: "64px",
         h2: "40px",

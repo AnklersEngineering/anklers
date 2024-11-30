@@ -1,3 +1,3 @@
 .radio-choice{
-  @apply rounded-3xl  border border-white/20 px-5 h-12  flex justify-center items-center  transition-all duration-300 hover:bg-white hover:text-dark cursor-pointer peer-checked:bg-white peer-checked:text-dark;
+  @apply rounded-3xl  border border-white/20 px-5 h-12  flex justify-center items-center  transition-all duration-300 bg-white/10 hover:bg-white/20  cursor-pointer peer-checked:bg-white peer-checked:text-dark;
 }
