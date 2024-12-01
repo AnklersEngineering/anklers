@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       maxWidth: {
         'screen-3xl': '1920px', // Укажите любое значение
+        '800': '800px', 
       },
       fontFamily: {
         sans: ['Inter Tight', 'ui-sans-serif', 'system-ui'],
@@ -23,7 +24,7 @@ module.exports = {
         20: "20px",
       },
       width: {
-        15: "3.75rem",
+        15: "3.75rem"
       },
       height: {
         15: "3.75rem",
@@ -40,13 +41,15 @@ module.exports = {
         default: "#1D1D1D",
         dark: {
           DEFAULT: "#0F0F0F",
+          layer2: '#2B2B2B',
         },
         secondary: {
           DEFAULT: "#949494",
         },
         gDark: "#1F1F1F",
         gBrown: "#9D4B0B",
-        lightGrey: '#F5F5F5'
+        lightGrey: '#F5F5F5',
+        headerStickyBorder: '#F3F5F81A',
       },
     },
   },
