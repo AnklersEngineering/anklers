@@ -3,7 +3,10 @@
     [attr.name]="name"
     [attr.autocomplete]="autocomplete"
     class="pt-6 rounded-20 block  input-control_control resize-none peer "
-    [class.has-value]="value?.length"
+    [ngClass]="{
+      'border-error': isInvalid,
+      'has-value': value?.length
+    }"
     [(ngModel)]="value"
     [id]="id"
     [placeholder]="placeholder"

@@ -13,12 +13,11 @@
     @apply font-sans;
     font-weight: 500;
   }
+  // Components
+  @import "./components/tag-item";
+  @import "./components/technology-item";
+  @import "./components/buttons";
+  @import "./components/radio";
+  @import "./components/input-controls";
 }
 
-
-// Components
-@import "./components/tag-item";
-@import "./components/technology-item";
-@import "./components/buttons";
-@import "./components/radio";
-@import "./components/input-controls";

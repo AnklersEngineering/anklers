@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CoreModule } from '@web/core';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { markFormControl } from 'src/app/core/utils';
 
 export enum ProjectType {
   crmSystem = 'CRM System',
@@ -37,11 +38,11 @@ export class SectionContactsComponent implements OnInit {
 
   
   formGroup = new FormGroup<ToFormControl<FormGroupModel>>({
-    name: new FormControl(null),
-    email: new FormControl(null),
-    companyName: new FormControl(null),
-    message: new FormControl(null),
-    projectType: new FormControl(null)
+    name: new FormControl(null, Validators.required),
+    email: new FormControl(null, [Validators.required, Validators.email]),
+    companyName: new FormControl(null, Validators.required),
+    message: new FormControl(),
+    projectType: new FormControl()
   });
   
 
@@ -51,19 +52,23 @@ export class SectionContactsComponent implements OnInit {
 
 
   onSubmitForm() {
+    markFormControl.used(this.formGroup);
 
-    emailjs
-      .send('service_gk9ecil', 'template_k2jw9rm', this.formGroup.value, {
-        publicKey: 'xF3MC_dUzBq4i2yul',
-      })
-      .then(
-        () => {
-          alert('SUCCESS!');
-          this.formGroup.reset(null);
-        },
-        (error) => {
-          console.log('FAILED...', (error as EmailJSResponseStatus).text);
-        },
-      );
+    if(this.formGroup.valid){
+      emailjs
+        .send('service_gk9ecil', 'template_k2jw9rm', this.formGroup.value, {
+          publicKey: 'xF3MC_dUzBq4i2yul',
+        })
+        .then(
+          () => {
+            alert('SUCCESS!');
+            this.formGroup.reset(null);
+          },
+          (error) => {
+            console.log('FAILED...', (error as EmailJSResponseStatus).text);
+          },
+        );
+    }
+
   }
 }

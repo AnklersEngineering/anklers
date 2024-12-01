@@ -15,6 +15,7 @@ module.exports = {
         'gradient-card': 'linear-gradient(101.24deg, rgba(255, 255, 255, 0.1) -4.32%, rgba(255, 255, 255, 0.05) 93.72%)'
       },
       fontSize: {
+        '2xs': '11px',
         h1: "64px",
         h2: "40px",
         h3: "28px",
@@ -38,6 +39,7 @@ module.exports = {
         30: "7.5rem",
       },
       colors: {
+        error: '#FF7575',
         default: "#1D1D1D",
         dark: {
           DEFAULT: "#0F0F0F",
