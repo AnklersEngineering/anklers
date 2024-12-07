@@ -7,6 +7,9 @@
 @import "tailwindcss/utilities";
 // @import "./custom-utilities.css";
 
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+@import 'atropos/scss';
+
 
 @layer base {
   html {
@@ -21,3 +24,9 @@
   @import "./components/input-controls";
 }
 
+.mat-mdc-dialog-surface{
+  border-radius: 20px !important;
+}
+.mat-mdc-dialog-component-host{
+  display: flex !important;
+}

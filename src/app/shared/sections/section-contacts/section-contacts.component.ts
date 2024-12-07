@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CoreModule } from '@web/core';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { markFormControl } from 'src/app/core/utils';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { ContactFormSuccessModalComponent } from './success-modal/success-modal.component';
 
 export enum ProjectType {
   crmSystem = 'CRM System',
@@ -27,7 +29,7 @@ export type ToFormControl<T> = {
 
 @Component({
   standalone: true,
-  imports: [CoreModule],
+  imports: [CoreModule, MatDialogModule],
   selector: 'section-contacts',
   templateUrl: './section-contacts.component.html'
 })
@@ -35,6 +37,8 @@ export type ToFormControl<T> = {
 export class SectionContactsComponent implements OnInit {
 
   projectType = ProjectType;
+
+  readonly dialog = inject(MatDialog);
 
   
   formGroup = new FormGroup<ToFormControl<FormGroupModel>>({
@@ -50,6 +54,11 @@ export class SectionContactsComponent implements OnInit {
 
   ngOnInit() { }
 
+  onOpenSuccessModal(){
+    this.dialog.open(ContactFormSuccessModalComponent, {
+      width: '400px',
+    });
+  }
 
   onSubmitForm() {
     markFormControl.used(this.formGroup);
@@ -61,8 +70,8 @@ export class SectionContactsComponent implements OnInit {
         })
         .then(
           () => {
-            alert('SUCCESS!');
             this.formGroup.reset(null);
+            this.onOpenSuccessModal();
           },
           (error) => {
             console.log('FAILED...', (error as EmailJSResponseStatus).text);

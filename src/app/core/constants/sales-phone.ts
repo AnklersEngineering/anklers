@@ -1,0 +1,2 @@
+export const SALES_PHONE = '+491757443981';
+export const SALES_PREVIEW_PHONE = '+49 (175) 744 39 81';

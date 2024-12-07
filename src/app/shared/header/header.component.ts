@@ -1,12 +1,14 @@
 import { AfterViewInit, Component, DestroyRef, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { CoreModule } from '@web/core';
 import { PlatformService } from '@web/core/services';
 import { fromEvent } from 'rxjs';
+import { ContactSalesCardModalComponent } from '../contact-card-modal/contact-card-modal.component';
 
 @Component({
   standalone: true,
-  imports: [CoreModule],
+  imports: [CoreModule, MatDialogModule],
   selector: 'app-header',
   templateUrl: './header.component.html',
 })
@@ -20,8 +22,9 @@ export class AppHeaderComponent implements AfterViewInit {
 
 
   // inject
-  destroyRef = inject(DestroyRef);
-  platformService = inject(PlatformService);
+  readonly destroyRef = inject(DestroyRef);
+  readonly platformService = inject(PlatformService);
+  readonly dialog = inject(MatDialog);
   // inject
 
 
@@ -49,5 +52,11 @@ export class AppHeaderComponent implements AfterViewInit {
         }
       });
     }
+  }
+
+  onOpenContactSalesCardModal(){
+    this.dialog.open(ContactSalesCardModalComponent, {
+      width: '400px',
+    });
   }
 }
