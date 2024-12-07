@@ -28,7 +28,7 @@ export class SectionProcessComponent implements AfterViewInit {
 
   onOpenContactSalesCardModal() {
     this.dialog.open(ContactSalesCardModalComponent, {
-      width: "400px",
+      width: "23.5vw",
     });
   }
 

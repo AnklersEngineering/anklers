@@ -1,34 +1,32 @@
-<header class="absolute top-5 left-0 right-0 z-10 max-w-screen-3xl mx-auto">
-  <nav class="px-12  py-2.5">
+<!-- max-w-screen-3xl -->
+<header class="absolute top-5 left-0 right-0 z-10 mx-auto">
+  <nav class="px-12 py-2.5">
     <ng-container *ngTemplateOutlet="headerContent"></ng-container>
   </nav>
 </header>
 
-<header class="fixed -top-20 left-0 right-0 z-10 max-w-800 w-full border border-headerStickyBorder/10 bg-dark rounded-full mx-auto transition-top duration-300"
-    [ngClass]="{
-      'top-4': isShowStickyHeader()
-    }">
+<header
+  class="fixed -top-20 left-0 right-0 z-10 max-w-800 w-full border border-headerStickyBorder/10 bg-dark rounded-full mx-auto transition-top duration-300"
+  [ngClass]="{
+    'top-4': isShowStickyHeader()
+  }"
+>
   <nav class="pl-10 pe-2 py-2">
     <ng-container *ngTemplateOutlet="headerContent"></ng-container>
   </nav>
 </header>
 
-
-
-
 <ng-template #headerContent>
-  <div class="flex flex-wrap items-center mx-auto ">
-    <a
-      routerLink="/"  
-      class="flex items-center me-16 cursor-pointer"
-    >
-      <img src="/assets/img/logo.svg" alt="">
+  <div class="flex flex-wrap items-center mx-auto">
+    <a routerLink="/" class="flex items-center me-16 cursor-pointer">
+      <img src="/assets/img/logo.svg" alt="" />
     </a>
     <div class="flex items-center ms-auto lg:order-2">
       <button
         (click)="onOpenContactSalesCardModal()"
         class="btn-white text-dark hover:bg-dark-layer2"
-        >Let's talk
+      >
+        Let's talk
       </button>
       <button
         data-collapse-toggle="mobile-menu-2"
@@ -73,26 +71,25 @@
       >
         <li>
           <a
-            routerLink="/projects" 
-            routerLinkActive="active" 
-            class="block text-white/50 hover:text-secondary  transition-all duration-300"
-  
-            >Projects (6)</a
+            routerLink="/projects"
+            routerLinkActive="active"
+            class="block text-white/50 hover:text-secondary transition-all duration-300"
+            >Projects</a
           >
         </li>
         <li>
           <a
-          routerLink="/about" 
-          routerLinkActive="active" 
-            class="block text-white/50 hover:text-secondary  transition-all duration-300"
+            routerLink="/about"
+            routerLinkActive="active"
+            class="block text-white/50 hover:text-secondary transition-all duration-300"
             >About us</a
           >
         </li>
         <li>
           <a
-            routerLink="/contacts" 
-            routerLinkActive="active" 
-            class="block text-white/50 hover:text-secondary  transition-all duration-300"
+            routerLink="/contacts"
+            routerLinkActive="active"
+            class="block text-white/50 hover:text-secondary transition-all duration-300"
             >Contact us</a
           >
         </li>
