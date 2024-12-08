@@ -20,30 +20,29 @@
             "outputPath": "dist/anklers",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-							"src/favicon.ico",
-							{
-								"glob": "**/*",
-								"input": "src/assets/img/",
-								"output": "/assets/img/"
-							},
-							{
-								"glob": "**/*",
-								"input": "src/assets/icons/",
-								"output": "/assets/icons/"
-							}
-						],
-            "styles": [
-              "src/assets/scss/styles.scss"
+              "src/favicon.ico",
+              {
+                "glob": "**/*",
+                "input": "src/assets/img/",
+                "output": "/assets/img/"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets/icons/",
+                "output": "/assets/icons/"
+              }
             ],
+
+            "styles": ["src/assets/scss/styles.scss"],
             "scripts": [],
             "server": "src/main.server.ts",
-            "prerender": true,
+            "prerender": {
+              "discoverRoutes": true
+            },
             "ssr": {
               "entry": "server.ts"
             }
@@ -90,19 +89,31 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/anklers/server",
+            "main": "src/main.server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            }
           }
         }
       }
     }
   },
   "cli": {
-    "schematicCollections": [
-      "@angular-eslint/schematics"
-    ],
     "analytics": false
   }
 }
