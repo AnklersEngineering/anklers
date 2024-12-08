@@ -1,0 +1,32 @@
+@import "tailwindcss/base";
+// @import "./custom-base-styles.css";
+
+@import "tailwindcss/components";
+// @import "./custom-components.css";
+
+@import "tailwindcss/utilities";
+// @import "./custom-utilities.css";
+
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+@import "atropos/scss";
+
+@layer base {
+  html {
+    @apply font-sans;
+    font-weight: 500;
+    font-size: 0.941vw;
+  }
+  // Components
+  @import "./components/tag-item";
+  @import "./components/technology-item";
+  @import "./components/buttons";
+  @import "./components/radio";
+  @import "./components/input-controls";
+}
+
+.mat-mdc-dialog-surface {
+  border-radius: 20px !important;
+}
+.mat-mdc-dialog-component-host {
+  display: flex !important;
+}

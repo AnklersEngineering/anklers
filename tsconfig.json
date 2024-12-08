@@ -23,7 +23,8 @@
     "paths": {
       "@web/shared/*": ["src/app/shared/*"],
       "@web/core": ["src/app/core/core.module.ts"],
-      "@web/core/services": ["src/app/core/services/index.ts"]
+      "@web/core/services": ["src/app/core/services/index.ts"],
+      "@web/core/contacts": ["src/app/core/constants/index.ts"],
     }
   },
   "angularCompilerOptions": {

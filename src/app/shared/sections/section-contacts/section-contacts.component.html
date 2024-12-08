@@ -1,0 +1,134 @@
+<section
+    class="py-20 px-12 bg-gradient-main text-white rounded-3xl flex "
+  >
+    <div class="w-2/5">
+      <h2 class="text-h2">
+        Let's take the next step. Provide us with a brief description of what you are going to build
+      </h2>
+    </div>
+    <div class="w-2/5 ms-auto" [formGroup]="formGroup">
+      <div class="mb-6">
+        <input-text formControlName="name">
+          <ng-container title>Name</ng-container>
+        </input-text>
+      </div>
+      <div class="mb-6">
+        <input-text formControlName="email">
+          <ng-container title>Email</ng-container>
+        </input-text>
+      </div>
+      <div class="mb-6">
+        <input-text formControlName="companyName">
+          <ng-container title>Company Name</ng-container>
+        </input-text>
+      </div>
+      <div class="mb-6">
+        <div class="mb-4 text-lg">Select project type</div>
+
+        <div class="flex space-x-2">
+          <div class="relative z-0">
+            <input
+              type="radio"
+              name="projectType"
+              [value]="projectType.crmSystem"
+              formControlName="projectType"
+              class="hidden peer"
+              id="crm_system"
+            />
+            <label
+              for="crm_system"
+              class="radio-choice"
+            >
+             CRM System
+            </label>
+          </div>
+          <div class="relative z-0">
+            <input
+              type="radio"
+              name="projectType"
+              [value]="projectType.erpSystem"
+              formControlName="projectType"
+              class="hidden peer"
+              id="erp_system"
+            />
+            <label
+              for="erp_system"
+              class="radio-choice"
+            >
+            ERP System
+            </label>
+          </div>
+          <div class="relative z-0">
+            <input
+              type="radio"
+              name="projectType"
+              [value]="projectType.marketplace"
+              formControlName="projectType"
+              class="hidden peer"
+              id="marketplace"
+            />
+            <label
+              for="marketplace"
+              class="radio-choice"
+            >
+            Marketplace
+            </label>
+          </div>
+          <div class="relative z-0">
+            <input
+              type="radio"
+              name="projectType"
+              [value]="projectType.website"
+              formControlName="projectType"
+              class="hidden peer"
+              id="website"
+            />
+            <label
+              for="website"
+              class="radio-choice"
+            >
+            Website
+            </label>
+          </div>
+          <div class="relative z-0">
+            <input
+              type="radio"
+              name="projectType"
+              [value]="projectType.branding"
+              formControlName="projectType"
+              class="hidden peer"
+              id="branding"
+            />
+            <label
+              for="branding"
+              class="radio-choice"
+            >
+              Branding
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="mb-6">
+        <input-textarea [autosize]="true" formControlName="message">
+          <ng-container title>Description</ng-container>
+        </input-textarea>
+      </div>
+      <div class="mb-6">
+        <p class="text-sm text-white/50">
+          By submitting this form I consent to having Brights collect and
+          process my personal details and agree with
+          <a routerLink="/privacy-policy" class="text-white/50 hover:text-white/100 underline"
+            >Privacy Policy</a
+          >
+        </p>
+      </div>
+      <div>
+        <button
+          class="btn-white text-dark"
+          (click)="onSubmitForm()"
+        >
+          Send request
+        </button>
+      </div>
+    </div>
+  </section>

@@ -14,6 +14,7 @@ module.exports = tseslint.config(
     ],
     processor: angular.processInlineTemplates,
     rules: {
+      "no-unused-expressions": "off",
       "@angular-eslint/component-selector": "off",
       "@typescript-eslint/no-inferrable-types": "off",
       "@angular-eslint/template/eqeqeq": "off",
@@ -27,6 +28,8 @@ module.exports = tseslint.config(
       "@typescript-eslint/no-unused-vars": "off",
       "no-sparse-arrays": "off",
       "@typescript-eslint/no-empty-function": "off",
+      "@angular-eslint/component-class-suffix": "error",
+      "@angular-eslint/directive-selector": "off",
     },
   },
   {

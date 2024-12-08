@@ -1,0 +1,73 @@
+<section class="py-20 px-12 bg-white rounded-20 mb-20 overflow-hidden">
+  <div class="flex justify-between mb-32">
+    <h2 class="text-h2 w-2/6">
+      Use only cutting-edge technologies to build reliable solutions
+    </h2>
+    <div class="text-lg w-96 mt-auto">
+      Work with the best tools to ensure high quality and future-proof your
+      projects. From websites to integrated CRM and ERP systems, we create
+      solutions that help your business grow
+    </div>
+  </div>
+  <div class="running-line">
+    <div class="gap-6 running-line_item">
+      <ng-container *ngTemplateOutlet="listOfTechnologies"></ng-container>
+    </div>
+    <div class="gap-6 running-line_item running-line_item--second">
+      <ng-container *ngTemplateOutlet="listOfTechnologies"></ng-container>
+    </div>
+  </div>
+</section>
+
+<ng-template #listOfTechnologies>
+  <div class="technology-item">
+    <div class="w-20 h-20 flex justify-center items-center mx-auto mb-5">
+      <img src="/assets/icons/technologies/angular.svg" alt="" />
+    </div>
+    <div class="text-center">Angular</div>
+  </div>
+  <div class="technology-item">
+    <div class="w-20 h-20 flex justify-center items-center mx-auto mb-5">
+      <img src="/assets/icons/technologies/html5.svg" alt="" />
+    </div>
+    <div class="text-center">HTML</div>
+  </div>
+  <div class="technology-item">
+    <div class="w-20 h-20 flex justify-center items-center mx-auto mb-5">
+      <img src="/assets/icons/technologies/css3.svg" alt="" />
+    </div>
+    <div class="text-center">SCSS</div>
+  </div>
+  <div class="technology-item">
+    <div class="w-20 h-20 flex justify-center items-center mx-auto mb-5">
+      <img src="/assets/icons/technologies/dotnet.svg" alt="" />
+    </div>
+    <div class="text-center">ASP.NET</div>
+  </div>
+  <div class="technology-item">
+    <div class="w-20 h-20 flex justify-center items-center mx-auto mb-5">
+      <img src="/assets/icons/technologies/javascript.svg" alt="" />
+    </div>
+    <div class="text-center">JavaScript</div>
+  </div>
+  <div class="technology-item">
+    <div class="w-20 h-20 flex justify-center items-center mx-auto mb-5">
+      <img src="/assets/icons/technologies/ts.svg" alt="" />
+    </div>
+    <div class="text-center">Typescript</div>
+  </div>
+  <div class="technology-item">
+    <div class="w-20 h-20 flex justify-center items-center mx-auto mb-5">
+      <img src="/assets/icons/technologies/signalr.svg" alt="" />
+    </div>
+    <div class="text-center">SignalR</div>
+  </div>
+  <div class="technology-item">
+    <div class="w-20 h-20 flex justify-center items-center">icon</div>
+    <div class="text-center">RabbitMq</div>
+  </div>
+  <div class="technology-item">
+    <div class="w-20 h-20 flex justify-center items-center">icon</div>
+    <div class="text-center">nrwl</div>
+  </div>
+</ng-template>

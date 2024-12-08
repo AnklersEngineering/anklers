@@ -11,9 +11,9 @@ export const getDefaultError = (control: AbstractControl) => {
   //$localize`:@@error_RequiredField:Обязательно к заполнению`;
 
   const defaultErrors = new Map<string, Function>([
-    ['required', () => 'Field is'],
+    ['required', () => 'Required field'],
     // ['requiredradio', () => translatePipe.transform('core_have-to-check-one-option')],
-    // ['email', () => translatePipe.transform('common_invalid-e-mail-format')],
+    ['email', () => 'Invalid E-mail format'],
     // ['min', () => translatePipe.transform('common_there-must-be-more-than', { value: getErrorArguments('min') })],
     // ['max', () => translatePipe.transform('common_should-be-less-than', { value: getErrorArguments('max') })],
     // [
@@ -91,14 +91,14 @@ export const getDefaultError = (control: AbstractControl) => {
   let errorMessage = null;
   for (let i = 0; i < defaultErrors.size; i++) {
     const errorName = [...defaultErrors.keys()][i];
-    // if (control.hasError(errorName) && defaultErrors.has(errorName)) {
-    // 	errorMessage =
-    // 		errorName === 'onlydecimalMaxLength'
-    // 			? defaultErrors.get(errorName)(control.getError('onlydecimalMaxLength'))
-    // 			: defaultErrors.get(errorName)();
+    if (control.hasError(errorName) && defaultErrors.has(errorName)) {
+    	errorMessage =
+    		errorName === 'onlydecimalMaxLength'
+    			? defaultErrors.get(errorName)(control.getError('onlydecimalMaxLength'))
+    			: defaultErrors.get(errorName)();
 
-    // 	break;
-    // }
+    	break;
+    }
 
     // if (control.hasError(errorName) && defaultErrors.has(errorName)) {
     // 	errorMessage =
