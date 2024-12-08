@@ -6,9 +6,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:anklers": "node dist/anklers/server/server.mjs",
-    "http-server:local": "npx http-server dist/anklers/browser",
-    "deploy": "ng build --configuration production --base-href /anklers/ && npx gh-pages -d dist/anklers/browser",
+    "serve:ssr:anklers": "node dist/server/server.mjs",
+    "http-server:local": "npx http-server dist/browser",
+    "deploy": "ng build --configuration production --base-href /anklers/ --deploy-url /anklers/ && npx gh-pages -d dist/browser",
     "lint": "ng lint",
     "ng": "ng"
   },
