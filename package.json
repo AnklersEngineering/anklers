@@ -6,8 +6,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "prerender": "ng run anklers:prerender",
     "serve:ssr:anklers": "node dist/anklers/server/server.mjs",
+    "deploy": "ng build --configuration production --base-href /anklers/ && npx gh-pages -d dist/anklers/browser",
     "lint": "ng lint",
     "ng": "ng"
   },
@@ -42,6 +42,7 @@
     "angular-eslint": "18.4.0",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.13.0",
+    "gh-pages": "^6.2.0",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.14",
     "typescript": "~5.4.2",
