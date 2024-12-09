@@ -45,6 +45,8 @@ export class SectionContactsComponent implements OnInit {
     projectType: new FormControl(),
   });
 
+  isLoading: boolean = false;
+
   constructor() {}
 
   ngOnInit() {}
@@ -59,12 +61,14 @@ export class SectionContactsComponent implements OnInit {
     markFormControl.used(this.formGroup);
 
     if (this.formGroup.valid) {
+      this.isLoading = true;
       emailjs
         .send("service_gk9ecil", "template_k2jw9rm", this.formGroup.value, {
           publicKey: "xF3MC_dUzBq4i2yul",
         })
         .then(
           () => {
+            this.isLoading = false;
             this.formGroup.reset(null);
             this.onOpenSuccessModal();
           },
