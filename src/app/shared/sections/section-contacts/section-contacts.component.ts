@@ -63,8 +63,8 @@ export class SectionContactsComponent implements OnInit {
     if (this.formGroup.valid) {
       this.isLoading = true;
       emailjs
-        .send("service_gk9ecil", "template_k2jw9rm", this.formGroup.value, {
-          publicKey: "xF3MC_dUzBq4i2yul",
+        .send("service_alviem8", "template_iol5heh", this.formGroup.value, {
+          publicKey: "2zSZmLZMMsJKZ7Mu0",
         })
         .then(
           () => {

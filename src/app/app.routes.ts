@@ -1,39 +1,51 @@
-import { Routes } from '@angular/router';
+import { Routes } from "@angular/router";
 
 export const routes: Routes = [
   {
-    path: '',
+    path: "",
     loadComponent: () =>
-      import('./pages/home/home-page.component').then((m) => m.HomePageComponent),
+      import("./pages/home/home-page.component").then(
+        (m) => m.HomePageComponent
+      ),
   },
   {
-    path: 'about',
+    path: "about",
     loadComponent: () =>
-      import('./pages/about/about-page.component').then((m) => m.AboutPageComponent),
+      import("./pages/about/about-page.component").then(
+        (m) => m.AboutPageComponent
+      ),
   },
   {
-    path: 'contacts',
+    path: "contacts",
     loadComponent: () =>
-      import('./pages/contacts/contacts.page.component').then((m) => m.ContactsPageComponent),
+      import("./pages/contacts/contacts.page.component").then(
+        (m) => m.ContactsPageComponent
+      ),
   },
   {
-    path: 'projects',
+    path: "projects",
     loadComponent: () =>
-      import('./pages/projects/projects.page.component').then((m) => m.ProjectsPageComponent),
+      import("./pages/projects/projects.page.component").then(
+        (m) => m.ProjectsPageComponent
+      ),
   },
   {
-    path: 'privacy-policy',
+    path: "privacy-policy",
     loadComponent: () =>
-      import('./pages/privacy-policy/privacy-policy.page.component').then((m) => m.PrivacyPolicyPageComponent),
+      import("./pages/privacy-policy/privacy-policy.page.component").then(
+        (m) => m.PrivacyPolicyPageComponent
+      ),
   },
   {
-    path: '404',
+    path: "404",
     loadComponent: () =>
-      import('./pages/404/404-page.component').then((m) => m.NotFoundPageComponent),
+      import("./pages/404/404-page.component").then(
+        (m) => m.NotFoundPageComponent
+      ),
   },
-  
+
   {
-    path: '**',
-    redirectTo: '404',
+    path: "**",
+    redirectTo: "/",
   },
 ];
