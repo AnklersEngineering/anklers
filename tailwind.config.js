@@ -6,6 +6,7 @@ module.exports = {
       maxWidth: {
         "screen-3xl": "1920px", // Укажите любое значение
         800: "47.059vw",
+        hSticky: "40vw",
       },
       fontFamily: {
         sans: ["Inter Tight", "ui-sans-serif", "system-ui"],
