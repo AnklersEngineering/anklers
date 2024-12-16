@@ -1,32 +1,38 @@
+$animationDuration: 45s;
+
 .running-line {
   height: 200px;
   position: relative;
+  display: flex;
   &_item {
-    width: 100%;
     padding: 0 12px;
-    transform: translate(100%, 0);
     display: flex;
-    position: absolute;
-    top: 0;
-    right: 0;
-    animation: ticker 30s infinite linear forwards;
+    animation: scroll $animationDuration linear infinite;
+    animation-delay: calc($animationDuration * -1);
 
     &.running-line_item--second {
-      animation: 30s ticker 15s infinite linear forwards;
+      animation: scroll2 $animationDuration linear infinite;
+      animation-delay: calc($animationDuration / -2);
     }
   }
 }
 
-@keyframes ticker {
+@keyframes scroll {
   0% {
-    transform: translate(100%, 0);
-  }
-
-  50% {
-    transform: translate(0, 0);
+    transform: translateX(100%);
   }
 
   100% {
-    transform: translate(-100%, 0);
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll2 {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-200%);
   }
 }
