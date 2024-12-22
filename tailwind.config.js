@@ -19,6 +19,7 @@ module.exports = {
       },
       fontSize: {
         "2xs": "0.647vw", // 11px
+        "16px": "16px",
         h1: "3.765vw", // 64px
         h2: "2.353vw", // 40px
         h3: "1.647vw", // 28px

@@ -17,9 +17,11 @@ import { ContactSalesCardModalComponent } from "../contact-card-modal/contact-ca
   imports: [CoreModule, MatDialogModule],
   selector: "app-header",
   templateUrl: "./header.component.html",
+  styleUrl: "./styles.scss",
 })
 export class AppHeaderComponent implements AfterViewInit {
   isShowStickyHeader = signal<boolean>(false);
+  isShowMobileMenu = signal<boolean>(false);
 
   // stickyHeader
   showFromTopInPx: number = 100;
@@ -55,6 +57,10 @@ export class AppHeaderComponent implements AfterViewInit {
           }
         });
     }
+  }
+
+  onToggleMobileMenu() {
+    this.isShowMobileMenu.set(!this.isShowMobileMenu());
   }
 
   onOpenContactSalesCardModal() {

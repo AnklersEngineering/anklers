@@ -1,0 +1,21 @@
+canvas.show {
+  opacity: 1;
+}
+canvas {
+  margin-left: 30px !important;
+}
+@media only screen and (max-width: 1025px) {
+  .canvas-wrapper {
+    height: 800px !important;
+    margin: auto;
+  }
+  canvas {
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .canvas-wrapper {
+    height: 500px !important;
+  }
+}

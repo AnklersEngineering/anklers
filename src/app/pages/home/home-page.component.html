@@ -1,40 +1,56 @@
 <!-- max-w-screen-3xl -->
-<main class="p-2.5 bg-neutral-100 text-default">
+<main class="p-1 lg:p-2.5 bg-neutral-100 text-default">
   <div class="mx-auto">
     <app-header />
     <div class="">
       <section
-        class="bg-dark px-12 py-20 rounded-3xl h-welcome flex flex-col mb-5 relative overflow-hidden"
+        class="bg-dark py-10 lg:py-20 px-6 lg:px-12 rounded-3xl h-welcome flex flex-col mb-5 relative overflow-hidden"
       >
-        <canvas
-          #animationContainer
-          width="800"
-          height="600"
-          class="absolute bottom-0 left-0 top-0 right-0"
-        ></canvas>
-        <div class="bg-dark absolute w-2/12 h-15 bottom-0 right-0"></div>
-        <div class="mt-auto flex justify-between text-white">
-          <h1 class="text-h1 leading-tight line-he w-2/5">
+        <div
+          class="canvas-wrapper absolute bottom-0 left-0 top-0 right-0 z-0 lg:z-10"
+        >
+          <canvas
+            #animationContainer
+            width="800"
+            height="600"
+            class="absolute bottom-0 left-0 top-0 right-0 opacity-0 transition-all duration-1000"
+            [class.show]="isShowAnimation"
+          ></canvas>
+          <div class="bg-dark absolute w-1/2 h-20 bottom-0 right-0"></div>
+        </div>
+        <div
+          class="mt-auto flex justify-between text-white flex-col lg:flex-row z-10 lg:z-0"
+        >
+          <h1 class="text-h1 leading-tight lg:w-2/5 lg:mb-0 mb-4">
             We are a full-cycle development studio
           </h1>
-          <div class="w-96 mt-auto">
+          <div class="md:w-96 mt-auto">
             Maximize your business potential with custom software solutions. Our
             expert team delivers tailored CRM and ERP platforms, fostering
             growth
           </div>
+
+          <div class="mt-4 lg:hidden">
+            <button
+              (click)="onOpenContactSalesCardModal()"
+              class="btn-white w-full md:w-auto justify-center text-dark hover:bg-dark-layer2"
+            >
+              Let's talk
+            </button>
+          </div>
         </div>
       </section>
-      <section class="py-20 px-12">
-        <h2 class="text-h2 leading-tight w-2/6 pb-20">
+      <section class="py-10 lg:py-20 px-6 lg:px-12">
+        <h2 class="text-h2 leading-tight md:w-1/2 lg:w-2/6 pb-10 lg:pb-20">
           Deliver exceptional services tailored for medium-sized businesses and
           startups
         </h2>
-        <div class="grid grid-cols-3 gap-6">
+        <div class="grid lg:grid-cols-3 gap-6">
           <div class="bg-white rounded-20 p-6 flex flex-col">
-            <div class="w-15 h-15 mb-10">
+            <div class="w-10 lg:w-15 l-10 lg:h-15 mb-6 lg:mb-10">
               <img src="assets/icons/design.svg" alt="" />
             </div>
-            <div class="mb-64">
+            <div class="mb-6 lg:mb-64">
               <h3 class="text-h3 mb-2">Design</h3>
               <p class="text-secondary">
                 Сreate intuitive, responsive designs that focus on delivering
@@ -56,10 +72,10 @@
             </div>
           </div>
           <div class="bg-white rounded-20 p-6 flex flex-col">
-            <div class="w-15 h-15 mb-10">
+            <div class="w-10 lg:w-15 l-10 lg:h-15 mb-6 lg:mb-10">
               <img src="assets/icons/development.svg" alt="" />
             </div>
-            <div class="mb-64">
+            <div class="mb-6 lg:mb-64">
               <h3 class="text-h3 mb-2">Development</h3>
               <p class="text-secondary">
                 Our development team builds custom platforms and applications
@@ -76,10 +92,10 @@
             </div>
           </div>
           <div class="bg-white rounded-20 p-6 flex flex-col">
-            <div class="w-15 h-15 mb-10">
+            <div class="w-10 lg:w-15 l-10 lg:h-15 mb-6 lg:mb-10">
               <img src="assets/icons/security.svg" alt="" />
             </div>
-            <div class="mb-64">
+            <div class="mb-6 lg:mb-64">
               <h3 class="text-h3 mb-2">Security</h3>
               <p class="text-secondary">
                 Implement cutting-edge security solutions to safeguard your

@@ -10,6 +10,10 @@
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
 @import "atropos/scss";
 
+$mediaTablet: 991px;
+$mediaTabletSm: 767px;
+$mediaMobile: 510px;
+
 @layer base {
   html {
     @apply font-sans;
@@ -29,4 +33,108 @@
 }
 .mat-mdc-dialog-component-host {
   display: flex !important;
+}
+
+.mat-mdc-dialog-container {
+  padding: 0 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  .max-w-hSticky {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: $mediaTablet) {
+  .mat-mdc-dialog-panel {
+    max-width: 400px !important;
+    width: 100% !important;
+  }
+  html {
+    font-size: 16px;
+    & h1,
+    & h2,
+    & h3,
+    & h4,
+    & h5,
+    & h6 {
+      line-height: 1.2;
+    }
+  }
+  body {
+    font-size: 1.7vw;
+  }
+  .text-h1 {
+    font-size: 3.433vw;
+  }
+  .text-h2 {
+    font-size: 2.834vw;
+  }
+  .text-h3 {
+    font-size: 2.283vw;
+  }
+  .text-h4 {
+    font-size: 2.075vw;
+  }
+  .text-sm {
+    font-size: 1.658vw;
+  }
+  .text-lg {
+    font-size: 1.758vw;
+  }
+  .text-140 {
+    font-size: 7.292vw;
+  }
+}
+@media screen and (max-width: $mediaTabletSm) {
+  body {
+    font-size: 2vw;
+  }
+  .text-h1 {
+    font-size: 6vw;
+  }
+  .text-h2 {
+    font-size: 4vw;
+  }
+  .text-h3 {
+    font-size: 4vw;
+  }
+  .text-h4 {
+    font-size: 3vw;
+  }
+  .text-sm {
+    font-size: 2vw;
+  }
+  .text-lg {
+    font-size: 3.1vw;
+  }
+  .text-140 {
+    font-size: 11vw;
+  }
+}
+@media screen and (max-width: $mediaMobile) {
+  body {
+    font-size: 3.5vw;
+  }
+  .text-h1 {
+    font-size: 8vw;
+  }
+  .text-h2 {
+    font-size: 7vw;
+  }
+  .text-h3 {
+    font-size: 5vw;
+  }
+  .text-h4 {
+    font-size: 4.5vw;
+  }
+  .text-sm {
+    font-size: 2.917vw;
+  }
+  .text-lg {
+    font-size: 4.3vw;
+  }
+  .text-140 {
+    font-size: 17.5vw;
+  }
 }

@@ -1,17 +1,17 @@
 <!-- max-w-screen-3xl -->
-<header class="absolute top-5 left-0 right-0 z-10 mx-auto">
-  <nav class="px-12 py-2.5">
+<header class="absolute top-1 lg:top-5 left-0 right-0 z-10 mx-auto">
+  <nav class="px-6 lg:px-12 py-2.5">
     <ng-container *ngTemplateOutlet="headerContent"></ng-container>
   </nav>
 </header>
 
 <header
-  class="fixed -top-20 left-0 right-0 z-10 max-w-hSticky w-full border border-headerStickyBorder/10 bg-dark rounded-full mx-auto transition-top duration-300"
+  class="header--sticky fixed -top-20 left-1 lg:left-0 right-1 lg:right-0 z-10 max-w-hSticky lg:w-full border border-headerStickyBorder/10 bg-dark/40 lg:bg-dark rounded-full mx-auto transition-top duration-300"
   [ngClass]="{
-    'top-4': isShowStickyHeader()
+    'top-1 lg:top-5': isShowStickyHeader()
   }"
 >
-  <nav class="pl-10 pe-2 py-2">
+  <nav class="pl-6 lg:pl-10 pe-6 lg:pe-2 py-2">
     <ng-container *ngTemplateOutlet="headerContent"></ng-container>
   </nav>
 </header>
@@ -24,76 +24,75 @@
     <div class="flex items-center ms-auto lg:order-2">
       <button
         (click)="onOpenContactSalesCardModal()"
-        class="btn-white text-dark hover:bg-dark-layer2"
+        class="hidden lg:flex btn-white text-dark hover:bg-dark-layer2"
       >
         Let's talk
       </button>
       <button
-        data-collapse-toggle="mobile-menu-2"
         type="button"
-        class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-        aria-controls="mobile-menu-2"
-        aria-expanded="false"
+        class="header-trigger inline-flex items-center py-2 text-white/50 rounded-lg lg:hidden"
+        (click)="onToggleMobileMenu()"
       >
-        <span class="sr-only">Open main menu</span>
-        <svg
-          class="w-6 h-6"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-            clip-rule="evenodd"
-          ></path>
-        </svg>
-        <svg
-          class="hidden w-6 h-6"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-            clip-rule="evenodd"
-          ></path>
-        </svg>
+        MENU
       </button>
     </div>
     <div
       class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
-      id="mobile-menu-2"
     >
-      <ul
-        class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0"
-      >
-        <!-- <li>
-          <a
-            routerLink="/projects"
-            routerLinkActive="active"
-            class="block text-white/50 hover:text-secondary transition-all duration-300"
-            >Projects</a
-          >
-        </li> -->
-        <li>
-          <a
-            routerLink="/about"
-            routerLinkActive="active"
-            class="block text-white/50 hover:text-secondary transition-all duration-300"
-            >About us</a
-          >
-        </li>
-        <li>
-          <a
-            routerLink="/contacts"
-            routerLinkActive="active"
-            class="block text-white/50 hover:text-secondary transition-all duration-300"
-            >Contact us</a
-          >
-        </li>
-      </ul>
+      <ng-container *ngTemplateOutlet="menuItems"></ng-container>
     </div>
   </div>
+</ng-template>
+
+@if(isShowMobileMenu()){
+<div
+  class="px-7 pb-10 pt-3 flex flex-col fixed z-40 inset-0 bg-white text-dark"
+>
+  <div class="flex items-center justify-between">
+    <a routerLink="/" class="flex items-center me-16 cursor-pointer">
+      <img src="assets/img/logo_dark.svg" alt="" />
+    </a>
+    <button
+      type="button"
+      class="header-trigger inline-flex items-center py-2 text-default rounded-lg lg:hidden"
+      (click)="onToggleMobileMenu()"
+    >
+      CLOSE
+    </button>
+  </div>
+  <div class="my-auto">
+    <ng-container *ngTemplateOutlet="menuItems"></ng-container>
+  </div>
+  <div class="">
+    <button
+      (click)="onOpenContactSalesCardModal()"
+      class="w-full justify-center btn-dark"
+    >
+      Let's talk
+    </button>
+  </div>
+</div>
+}
+
+<ng-template #menuItems>
+  <ul
+    class="flex flex-col font-medium lg:flex-row space-y-12 lg:space-y-0 lg:space-x-8 lg:mt-0"
+  >
+    <li>
+      <a
+        routerLink="/about"
+        routerLinkActive="active"
+        class="block text-center py-1 lg:py-0 text-dark lg:text-white/50 lg:hover:text-secondary transition-all duration-300"
+        >About us</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/contacts"
+        routerLinkActive="active"
+        class="block text-center py-1 lg:py-0 text-dark lg:text-white/50 lg:hover:text-secondary transition-all duration-300"
+        >Contact us</a
+      >
+    </li>
+  </ul>
 </ng-template>

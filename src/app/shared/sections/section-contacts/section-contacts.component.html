@@ -1,12 +1,14 @@
-<section class="py-20 px-12 bg-gradient-main text-white rounded-3xl flex">
-  <div class="w-2/5">
+<section
+  class="py-10 lg:py-20 px-6 lg:px-12 bg-gradient-main text-white rounded-3xl flex flex-col lg:flex-row"
+>
+  <div class="lg:w-2/5 mb-6 lg:mb-0">
     <h2 class="text-h2">
       Let's take the next step. Provide us with a brief description of what you
       are going to build
     </h2>
   </div>
   <div
-    class="w-2/5 ms-auto"
+    class="lg:w-2/5 lg:ms-auto"
     [formGroup]="formGroup"
     [ngClass]="{
       'opacity-50 pointer-events-none': isLoading
@@ -30,8 +32,8 @@
     <div class="mb-6">
       <div class="mb-4 text-lg">Select project type</div>
 
-      <div class="flex space-x-2">
-        <div class="relative z-0">
+      <div class="flex space-x-2 overflow-auto">
+        <div class="relative z-0 min-w-max">
           <input
             type="radio"
             name="projectType"
@@ -42,7 +44,7 @@
           />
           <label for="crm_system" class="radio-choice"> CRM System </label>
         </div>
-        <div class="relative z-0">
+        <div class="relative z-0 min-w-max">
           <input
             type="radio"
             name="projectType"
@@ -53,7 +55,7 @@
           />
           <label for="erp_system" class="radio-choice"> ERP System </label>
         </div>
-        <div class="relative z-0">
+        <div class="relative z-0 min-w-max">
           <input
             type="radio"
             name="projectType"
@@ -64,7 +66,7 @@
           />
           <label for="marketplace" class="radio-choice"> Marketplace </label>
         </div>
-        <div class="relative z-0">
+        <div class="relative z-0 min-w-max">
           <input
             type="radio"
             name="projectType"
@@ -75,7 +77,7 @@
           />
           <label for="website" class="radio-choice"> Website </label>
         </div>
-        <div class="relative z-0">
+        <div class="relative z-0 min-w-max">
           <input
             type="radio"
             name="projectType"

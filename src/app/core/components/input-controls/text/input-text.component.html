@@ -1,6 +1,6 @@
 <div class="relative z-0 w-full">
   <input
-    class="pt-4 rounded-20 block h-16 peer input-control_control "
+    class="pt-4 rounded-20 block h-16 peer input-control_control"
     [ngClass]="{
       'border-error': isInvalid,
       'has-value': value?.length
@@ -22,7 +22,7 @@
   />
   <label
     [for]="id"
-    class="px-5 peer-focus:font-sm absolute text-white/50 duration-300 transform -translate-y-5 scale-75 top-5 -z-10 origin-[0]  peer-hover:text-white  peer-focus:text-white peer- peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-[.has-value]:scale-75 peer-[.has-value]:left-1 peer-focus:-translate-y-5 peer-focus:left-1 focus:left-1 left-1"
+    class="px-5 max-lg:text-16px peer-focus:font-sm absolute text-white/50 duration-300 transform -translate-y-5 scale-75 top-5 -z-10 origin-[0] peer-hover:text-white peer-focus:text-white peer- peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-[.has-value]:scale-75 peer-[.has-value]:left-1 peer-focus:-translate-y-5 peer-focus:left-1 focus:left-1 left-1"
     [class.label--req]="hasRequiredField.value"
     [class.form-control_label--prefix]="isHasPrefix"
   >

@@ -1,0 +1,9 @@
+.header-trigger {
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .header--sticky {
+    backdrop-filter: blur(4px);
+  }
+}

@@ -1,24 +1,20 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, inject } from "@angular/core";
+import { MatDialogRef } from "@angular/material/dialog";
 
 @Component({
   standalone: true,
   imports: [],
-  selector: 'contact-form-success-modal',
-  templateUrl: './success-modal.component.html',
-  styleUrl: './styles.scss',
+  selector: "contact-form-success-modal",
+  templateUrl: "./success-modal.component.html",
+  styleUrl: "./styles.scss",
   host: {
-    class: 'p-10 text-center flex-col relative'
-  }
+    class: "p-6 lg:p-10 text-center flex-col relative",
+  },
 })
-
-export class ContactFormSuccessModalComponent  {
-
+export class ContactFormSuccessModalComponent {
   readonly dialogRef = inject(MatDialogRef<ContactFormSuccessModalComponent>);
-  
-  constructor() { }
 
-
+  constructor() {}
 
   onClose(): void {
     this.dialogRef.close();

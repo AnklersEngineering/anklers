@@ -1,10 +1,12 @@
-<footer class="px-12 pt-20 pb-12 rounded-3xl bg-white text-default mt-5">
-  <h2 class="text-h2 w-2/6 mb-20 leading-tight">
+<footer
+  class="px-6 lg:px-12 pt-10 lg:pt-20 pb-6 lg:pb-12 rounded-3xl bg-white text-default mt-5"
+>
+  <h2 class="text-h2 md:w-1/2 lg:w-2/6 mb-10 lg:mb-20 leading-tight">
     Partner with a studio that crafts tailor-made solutions for your unique
     ideas
   </h2>
-  <div class="flex space-x-6 pb-20">
-    <div class="w-2/4">
+  <div class="flex lg:space-x-6 pb-10 lg:pb-20 flex-col lg:flex-row">
+    <div class="lg:w-2/4 mb-6 lg:mb-0">
       <div class="mb-2 text-secondary text-sm">Mail</div>
       <a
         href="mailto:{{ email }}"
@@ -12,7 +14,7 @@
         >{{ email }}</a
       >
     </div>
-    <div class="w-2/4">
+    <div class="lg:w-2/4">
       <div class="mb-2 text-secondary text-sm">Phone</div>
       <a
         href="tel:{{ SALES_PHONE }}"
@@ -21,19 +23,12 @@
       >
     </div>
   </div>
-  <div class="border-t border-t-dark/20 pt-20">
-    <div class="flex space-x-6 pb-20">
-      <div class="w-2/4">
+  <div class="border-t border-t-dark/20 pt-10 lg:pt-20">
+    <div class="flex lg:space-x-6 pb-10 lg:pb-20 flex-col lg:flex-row">
+      <div class="w-full lg:w-2/4 mb-6 lg:mb-0">
         <div>
           <div class="text-sm mb-3">Pages</div>
           <ul class="text-secondary text-sm grid gap-2">
-            <!-- <li>
-              <a
-                href="/projects"
-                class="inline-flex hover:text-blue-500 transition-all duration-300"
-                >Projects</a
-              >
-            </li> -->
             <li>
               <a
                 href="/about"
@@ -51,33 +46,7 @@
           </ul>
         </div>
       </div>
-      <div class="w-2/4">
-        <!-- <div class="mb-12">
-          <div class=" text-sm mb-3">Social</div>
-          <ul class="text-secondary text-sm grid gap-2">
-            <li>
-              <a
-                href="#"
-                class="inline-flex hover:text-blue-500 transition-all duration-300"
-                >Linkedin</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="inline-flex hover:text-blue-500 transition-all duration-300"
-                >What’s Up</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="inline-flex hover:text-blue-500 transition-all duration-300"
-                >Telegram</a
-              >
-            </li>
-          </ul>
-        </div> -->
+      <div class="w-full lg:w-2/4">
         <div>
           <div class="text-sm mb-3">Legal</div>
           <ul class="text-secondary text-sm grid gap-2">
@@ -88,18 +57,11 @@
                 >Privacy Policy</a
               >
             </li>
-            <!-- <li>
-              <a
-                href="#"
-                class="inline-flex hover:text-blue-500 transition-all duration-300"
-                >Terms of Service</a
-              >
-            </li> -->
           </ul>
         </div>
       </div>
     </div>
-    <div class="text-secondary text-sm">
+    <div class="text-sm">
       © {{ currentDate | date : "y" }} Anklers. All right reserved.
     </div>
   </div>
