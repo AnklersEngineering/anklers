@@ -17,5 +17,11 @@ canvas {
 @media only screen and (max-width: 500px) {
   .canvas-wrapper {
     height: 500px !important;
+    &_bg {
+      height: 100px;
+    }
+  }
+  canvas {
+    top: -40px;
   }
 }
