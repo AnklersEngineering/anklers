@@ -1,4 +1,4 @@
-import { DOCUMENT } from '@angular/common';
+import { DOCUMENT } from "@angular/common";
 import {
   Component,
   ElementRef,
@@ -10,16 +10,16 @@ import {
   Optional,
   SkipSelf,
   ViewChild,
-} from '@angular/core';
-import { ControlContainer, NG_VALUE_ACCESSOR } from '@angular/forms';
+} from "@angular/core";
+import { ControlContainer, NG_VALUE_ACCESSOR } from "@angular/forms";
 
-import { debounceTime, mergeMap, takeUntil } from 'rxjs/operators';
-import { BaseInputComponent } from '../common';
-import { TextAreaAutosizeDirective } from './textarea-autosize.directive';
+import { debounceTime, mergeMap, takeUntil } from "rxjs/operators";
+import { BaseInputComponent } from "../common";
+import { TextAreaAutosizeDirective } from "./textarea-autosize.directive";
 
 @Component({
-  selector: 'input-textarea',
-  templateUrl: './input-textarea.component.html',
+  selector: "input-textarea",
+  templateUrl: "./input-textarea.component.html",
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -32,18 +32,19 @@ import { TextAreaAutosizeDirective } from './textarea-autosize.directive';
     },
   ],
 
-  exportAs: 'inputTextarea',
+  styleUrl: "../text/styles.scss",
+  exportAs: "inputTextarea",
 })
 export class InputTextareaComponent extends BaseInputComponent<string> {
   @Input()
   autocomplete: string;
 
-  @ViewChild('currentInput') currentInput: ElementRef<HTMLInputElement>;
+  @ViewChild("currentInput") currentInput: ElementRef<HTMLInputElement>;
 
   @ViewChild(TextAreaAutosizeDirective)
   textAreaAutosizeDirective: TextAreaAutosizeDirective;
 
-  @HostBinding('class.input-control--autosize')
+  @HostBinding("class.input-control--autosize")
   @Input()
   autosize = false;
   /**
@@ -77,7 +78,7 @@ export class InputTextareaComponent extends BaseInputComponent<string> {
         if (
           this.value &&
           this.value?.length &&
-          (this.value[0] == ' ' || this.value[this.value.length - 1] == ' ')
+          (this.value[0] == " " || this.value[this.value.length - 1] == " ")
         ) {
           this.value = this.value.trim();
         }

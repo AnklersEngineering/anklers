@@ -1,4 +1,4 @@
-import { DOCUMENT } from '@angular/common';
+import { DOCUMENT } from "@angular/common";
 import {
   Component,
   ElementRef,
@@ -9,14 +9,15 @@ import {
   Optional,
   SkipSelf,
   ViewChild,
-} from '@angular/core';
-import { ControlContainer, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { debounceTime, mergeMap, takeUntil } from 'rxjs/operators';
-import { BaseInputComponent } from '../common';
+} from "@angular/core";
+import { ControlContainer, NG_VALUE_ACCESSOR } from "@angular/forms";
+import { debounceTime, mergeMap, takeUntil } from "rxjs/operators";
+import { BaseInputComponent } from "../common";
 
 @Component({
-  selector: 'input-text',
-  templateUrl: './input-text.component.html',
+  selector: "input-text",
+  templateUrl: "./input-text.component.html",
+  styleUrl: "./styles.scss",
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -30,13 +31,13 @@ import { BaseInputComponent } from '../common';
   ],
   // inputs: [...baseFormControlInputMetadata, 'autocomplete'],
   // outputs: [...baseFormControlOutputMetadata],
-  exportAs: 'inputText',
+  exportAs: "inputText",
 })
 export class InputTextComponent extends BaseInputComponent<string> {
   @Input()
   autocomplete: string;
 
-  @ViewChild('currentInput') currentInput: ElementRef<HTMLInputElement>;
+  @ViewChild("currentInput") currentInput: ElementRef<HTMLInputElement>;
 
   // @HostListener('window:keydown', ['$event'])
   // onKeyDown(event: KeyboardEvent) {
@@ -46,7 +47,7 @@ export class InputTextComponent extends BaseInputComponent<string> {
   // }
 
   @Input()
-  type: 'text' | 'email' = 'text';
+  type: "text" | "email" = "text";
 
   constructor(
     elementRef: ElementRef,
@@ -70,7 +71,7 @@ export class InputTextComponent extends BaseInputComponent<string> {
         if (
           this.value &&
           this.value?.length &&
-          (this.value[0] == ' ' || this.value[this.value.length - 1] == ' ')
+          (this.value[0] == " " || this.value[this.value.length - 1] == " ")
         ) {
           this.value = this.value.trim();
         }
