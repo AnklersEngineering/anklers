@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { CoreModule } from "@web/core";
 import { SALES_PHONE, SALES_PREVIEW_PHONE } from "@web/core/contacts";
 
@@ -7,6 +7,7 @@ import { SALES_PHONE, SALES_PREVIEW_PHONE } from "@web/core/contacts";
   imports: [CoreModule],
   selector: "app-footer",
   templateUrl: "./footer.component.html",
+  changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: "",
   },

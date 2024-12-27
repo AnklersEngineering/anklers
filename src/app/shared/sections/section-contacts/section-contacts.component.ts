@@ -31,6 +31,7 @@ export type ToFormControl<T> = {
   imports: [CoreModule, MatDialogModule],
   selector: "section-contacts",
   templateUrl: "./section-contacts.component.html",
+  styleUrl: "./styles.scss",
 })
 export class SectionContactsComponent implements OnInit {
   projectType = ProjectType;

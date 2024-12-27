@@ -8,6 +8,7 @@ canvas {
   .canvas-wrapper {
     height: 800px !important;
     margin: auto;
+    pointer-events: none;
   }
   canvas {
     height: 100%;

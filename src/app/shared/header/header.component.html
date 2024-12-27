@@ -1,12 +1,12 @@
 <!-- max-w-screen-3xl -->
-<header class="absolute top-1 lg:top-5 left-0 right-0 z-10 mx-auto">
+<header class="absolute top-1 lg:top-5 left-0 right-0 z-20 mx-auto">
   <nav class="px-6 lg:px-12 py-2.5">
     <ng-container *ngTemplateOutlet="headerContent"></ng-container>
   </nav>
 </header>
 
 <header
-  class="header--sticky fixed -top-20 left-1 lg:left-0 right-1 lg:right-0 z-10 max-w-hSticky lg:w-full border border-headerStickyBorder/10 bg-dark/40 lg:bg-dark rounded-full mx-auto transition-top duration-300"
+  class="header--sticky fixed -top-20 left-1 lg:left-0 right-1 lg:right-0 z-20 max-w-hSticky lg:w-full border border-headerStickyBorder/10 bg-dark/40 lg:bg-dark rounded-full mx-auto transition-top duration-300"
   [ngClass]="{
     'top-1 lg:top-5': isShowStickyHeader()
   }"
@@ -46,7 +46,7 @@
 
 @if(isShowMobileMenu()){
 <div
-  class="px-7 pb-10 pt-3 flex flex-col fixed z-40 inset-0 bg-white text-dark"
+  class="px-6 pb-10 pt-3 flex flex-col fixed z-40 inset-0 bg-white text-dark"
 >
   <div class="flex items-center justify-between">
     <a routerLink="/" class="flex items-center me-16 cursor-pointer">

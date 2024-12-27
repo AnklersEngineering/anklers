@@ -6,7 +6,7 @@ import {
   viewChildren,
 } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
-import { PlatformService } from "@web/core/services";
+import { MediaQueriesService, PlatformService } from "@web/core/services";
 import { ContactSalesCardModalComponent } from "@web/shared/contact-card-modal/contact-card-modal.component";
 import Atropos from "atropos";
 
@@ -18,8 +18,9 @@ import Atropos from "atropos";
 })
 export class SectionProcessComponent implements AfterViewInit {
   // inject
-  readonly dialog = inject(MatDialog);
-  platformService = inject(PlatformService);
+  private readonly dialog = inject(MatDialog);
+  private readonly platformService = inject(PlatformService);
+  private readonly mediaQueriesService = inject(MediaQueriesService);
   // inject
 
   listOfCardEffects = viewChildren<ElementRef>("cardEffect");
@@ -49,7 +50,10 @@ export class SectionProcessComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    if (this.platformService.isBrowser) {
+    if (
+      this.platformService.isBrowser &&
+      !this.mediaQueriesService.isLgSize()
+    ) {
       this.init3dCardEffect();
     }
   }

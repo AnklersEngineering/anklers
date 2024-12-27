@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { ChangeDetectionStrategy, Component, OnInit } from "@angular/core";
 import { CoreModule } from "@web/core";
 
 @Component({
@@ -7,6 +7,7 @@ import { CoreModule } from "@web/core";
   selector: "section-technologies",
   templateUrl: "./section-technologies.component.html",
   styleUrl: "./styles.scss",
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SectionTechnologiesComponent implements OnInit {
   constructor() {}

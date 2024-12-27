@@ -15,17 +15,17 @@
     }"
   >
     <div class="mb-6">
-      <input-text formControlName="name">
+      <input-text formControlName="name" autocomplete="password">
         <ng-container title>Name</ng-container>
       </input-text>
     </div>
     <div class="mb-6">
-      <input-text formControlName="email">
+      <input-text formControlName="email" autocomplete="password">
         <ng-container title>Email</ng-container>
       </input-text>
     </div>
     <div class="mb-6">
-      <input-text formControlName="companyName">
+      <input-text formControlName="companyName" autocomplete="password">
         <ng-container title>Company Name</ng-container>
       </input-text>
     </div>
@@ -91,19 +91,23 @@
       </div>
     </div>
     <div class="mb-6">
-      <input-textarea [autosize]="true" formControlName="message">
+      <input-textarea
+        [autosize]="true"
+        formControlName="message"
+        autocomplete="password"
+      >
         <ng-container title>Description</ng-container>
       </input-textarea>
     </div>
     <div class="mb-6">
       <p class="text-sm text-white/50">
-        By submitting this form I consent to having Brights collect and process
-        my personal details and agree with
+        By submitting this form, I consent to Brights collecting and processing
+        my personal details and agree to the
         <a
           routerLink="/privacy-policy"
           class="text-white/50 hover:text-white/100 underline"
           >Privacy Policy</a
-        >
+        >.
       </p>
     </div>
     <div>
