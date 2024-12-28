@@ -1,0 +1,28 @@
+.link--animation {
+  position: relative;
+  &.link--animation-white {
+    &::before {
+      background-color: #fff;
+    }
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background-color: #000;
+    height: 1px;
+    bottom: -2px;
+    transform-origin: 100% 50%;
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+
+    @media only screen and (max-width: 1024px) {
+      display: none !important;
+    }
+  }
+  &:hover:before {
+    transform-origin: 0% 50%;
+    transform: scaleX(1);
+  }
+}
