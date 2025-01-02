@@ -1,5 +1,5 @@
 <section
-  class="py-10 lg:py-20 px-6 lg:px-12 bg-gradient-main text-white rounded-3xl flex flex-col lg:flex-row"
+  class="py-10 lg:py-20 px-6 lg:px-12 bg-gradient-main text-white rounded-3xl flex flex-col lg:flex-row overflow-hidden"
 >
   <div class="lg:w-2/5 mb-6 lg:mb-0">
     <h2 class="text-h2">
@@ -32,7 +32,9 @@
     <div class="mb-6">
       <div class="mb-4 text-lg">Select project type</div>
 
-      <div class="flex space-x-2 overflow-auto">
+      <div
+        class="flex space-x-2 overflow-auto -ms-6 -me-6 pe-6 ps-6 sm:pe-0 sm:ps-0 sm:-ms-0 sm:-me-0 radio-list"
+      >
         <div class="relative z-0 min-w-max">
           <input
             type="radio"
